@@ -1,0 +1,116 @@
+
+# 🧰 Top Git Questions & Answers for DevOps (Simplified)
+
+---
+
+## 🔧 Basics & Core Concepts
+
+### 1. What is Git? How is it different from SVN?
+Git is a tool to track changes in code (version control). Unlike SVN, Git is distributed — every developer has the full history locally. It’s faster and works offline too.
+
+### 2. What’s the difference between `git pull` and `git fetch`?
+- `git fetch`: gets new changes from the remote, but doesn’t apply them to your branch.
+- `git pull`: gets changes **and** merges them into your current branch.
+
+### 3. What’s the difference between a branch and a tag?
+- A **branch** is a moving pointer for ongoing work (like `main`, `dev`).
+- A **tag** marks a specific point in history (usually a release), and doesn’t change.
+
+### 4. What is a detached HEAD state?
+It means you're not on a branch — you're on a specific commit. Any changes won’t be saved to a branch unless you create one.
+
+### 5. What does `git stash` do?
+It saves your uncommitted changes temporarily so you can work on something else. You can reapply them later with `git stash pop`.
+
+---
+
+## 🧠 Intermediate Use & Troubleshooting
+
+### 6. How do you resolve a merge conflict?
+Git tells you where the conflict is. You edit the file to fix it, then run:
+```bash
+git add <filename>
+git commit
+```
+
+### 7. How do you revert a pushed commit?
+```bash
+git revert <commit-hash>
+```
+Creates a new commit that undoes the changes.
+
+### 8. What’s the difference between `git reset`, `git revert`, and `git checkout`?
+- `git reset`: moves your branch pointer (can remove commits).
+- `git revert`: creates a new commit that undoes a previous one.
+- `git checkout`: switches branches or files.
+
+### 9. What’s the difference between `git merge` and `git rebase`?
+- `merge`: combines branches and keeps history.
+- `rebase`: moves your commits on top of another branch — cleaner history.
+
+### 10. How do you cherry-pick a commit?
+```bash
+git cherry-pick <commit-hash>
+```
+Applies a specific commit to another branch.
+
+---
+
+## 🚀 CI/CD & Automation
+
+### 11. How do you integrate Git with CI/CD tools?
+You connect your Git repo to tools like Jenkins, GitLab CI, or GitHub Actions. They watch for changes and run tests, builds, or deployments automatically.
+
+### 12. How do you trigger a pipeline based on a branch or tag?
+Use config in your pipeline file:
+```yaml
+only:
+  - main
+  - tags
+```
+
+### 13. What Git branching strategies are common in DevOps?
+- **Git Flow**: feature → dev → release → main
+- **Trunk-based**: work directly in `main` with feature flags
+
+### 14. How do you manage secrets in Git?
+- Never commit secrets
+- Add them to `.gitignore`
+- Use secret managers (AWS Secrets Manager, Vault) with your CI/CD tool
+
+---
+
+## 👥 Collaboration & Workflow
+
+### 15. How do you enforce code reviews?
+Use Pull Requests (PRs) or Merge Requests (MRs) and require approvals before merging (via GitHub, GitLab, Bitbucket).
+
+### 16. What does `.gitignore` do?
+Tells Git to ignore certain files:
+```
+node_modules/
+.env
+*.log
+```
+
+### 17. How do you squash commits before merging?
+Use:
+```bash
+git rebase -i HEAD~3
+```
+Or squash via GitHub/GitLab UI when merging a PR.
+
+### 18. What are submodules?
+Submodules let you include another Git repo inside your repo. They’re hard to manage and best avoided unless necessary.
+
+### 19. How do you roll back a bad deployment from a Git commit?
+- Use `git revert`
+- Deploy a known good commit/tag
+- Use your CI/CD rollback option (if available)
+
+### 20. How is Git used in Infrastructure as Code (IaC)?
+- Store Terraform, Ansible, Helm, etc. in Git
+- Use Git to track IaC changes
+- Trigger CI/CD pipelines to apply infrastructure changes
+
+---
