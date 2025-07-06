@@ -1,0 +1,63 @@
+🔁 Branching & Merging
+You created a new feature branch from main. After some time, main also got updates. How will you sync your feature branch with main?
+
+What is the difference between git merge and git rebase? When would you use one over the other in a team environment?
+
+Explain a scenario where a three-way merge is used and what happens internally.
+
+What happens if you try to merge two branches and there’s a conflict? How do you resolve it?
+
+How do you squash multiple commits into a single commit before merging a feature branch into main?
+
+⏮️ Undoing Changes
+You accidentally committed sensitive data (e.g., password or API key). How will you remove it from the history completely?
+
+You committed to the wrong branch. How do you undo the commit and move it to the correct branch?
+
+Explain the difference between git reset, git revert, and git checkout. When would you use each?
+
+You did a git reset --hard but lost some uncommitted work. Can you recover it? If yes, how?
+
+🚦 Working with Remote Repositories
+You pushed code to the wrong remote branch. How do you fix this situation without affecting others?
+
+How do you handle a situation where your push is rejected due to non-fast-forward updates?
+
+Explain the difference between git fetch, git pull, and git clone. Give real-life use cases.
+
+You’re working on a team and see merge conflicts when you pull. How do you collaborate to resolve them smoothly?
+
+📄 Staging & Committing
+What’s the difference between git add ., git add -u, and git add -A? When should you use each?
+
+You staged a file accidentally. How can you unstage it without losing changes?
+
+How do you make an amend to the last commit? Can you change the commit message and the files?
+
+🕒 History & Logs
+How can you find out which commit introduced a bug? What is git bisect and how does it work?
+
+How do you view the changes made in a specific commit or between two commits?
+
+Explain how git reflog can help in recovering from mistakes.
+
+🔒 Advanced/Best Practices
+In a CI/CD environment, what best practices should be followed with Git to ensure clean merges and safe deployments?
+
+👉 Want answers for these? I can provide detailed explanations and command examples for each question if you like. Just say "Show answers" or ask for specific question numbers (like "Explain Q6 and Q8").
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
+
+
+
+Tools
+
+
